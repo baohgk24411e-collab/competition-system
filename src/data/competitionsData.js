@@ -108,7 +108,7 @@ export const COMPETITIONS_DATA = [
   category: "business",
   organizer: "CLB Kinh doanh Quốc tế (IBC) – UEL",
   description: "Cuộc thi học thuật thường niên về kinh doanh quốc tế, mùa XII với chủ đề 'Sustainable Supply Chain'. Thí sinh giải quyết các bài toán thực tế liên quan đến chuỗi cung ứng bền vững thông qua nhiều vòng thi từ kiến thức nền đến dự án thực tế và tranh biện.",
-  poster: "/schallenge2024.jpg",
+  poster: "/S challenge.jpg",
   fee: "Miễn phí",
   format: "Đội (BTC hỗ trợ ghép đội cho cá nhân)",
   regPeriod: "Trước 21h00 ngày 22/09/2024",
@@ -168,7 +168,73 @@ export const COMPETITIONS_DATA = [
     "Có mentor hỗ trợ xuyên suốt vòng bán kết và chung kết"
   ]
   },
-
+  {
+  id: 7,
+  title: "AI IN BUSINESS SEASON 2 | AI4I",
+  status: "ended",
+  category: "technology",
+  organizer: "CLB AI4I – UEL",
+  description: "Cuộc thi học thuật về ứng dụng AI trong kinh doanh, tập trung vào bài toán tăng trưởng người dùng trong thương mại điện tử. Thí sinh phát triển ý tưởng, xây dựng mô hình kinh doanh và ứng dụng AI (MVP) để giải quyết vấn đề thực tiễn.",
+  poster: "/AI_in_Business.jpg",
+  fee: "Miễn phí",
+  format: "Đội 3–5 thành viên",
+  regPeriod: "01/03/2025 – 31/03/2025",
+  eligibility: "Học sinh THPT & sinh viên khu vực TP.HCM và lân cận",
+  website: "",
+  fanpage: "https://www.facebook.com/AI4IC",
+  email: "ai4iclub@st.uel.edu.vn",
+  phone: "",
+  timeline: [
+    {
+      phase: "VÒNG 1: IDEA PROPOSAL",
+      date: "01/04/2025 – 18/04/2025",
+      desc: "Nộp báo cáo ý tưởng kinh doanh và giải pháp AI"
+    },
+    {
+      phase: "VÒNG 2: BUSINESS MODEL DEVELOPMENT",
+      date: "19/04/2025 – 03/05/2025",
+      desc: "Phát triển mô hình kinh doanh; bảng sinh viên có Hackathon 36h xây MVP"
+    },
+    {
+      phase: "VÒNG 3: FINALE",
+      date: "06/05/2025 – 25/05/2025",
+      desc: "Pitching, tranh biện và bảo vệ giải pháp trước BGK"
+    },
+    {
+      phase: "WORKSHOP SERIES",
+      date: "16/03/2025 & 22/03/2025",
+      desc: "2 buổi chuyên sâu với chuyên gia AI và doanh nghiệp"
+    }
+  ],
+  prizes: [
+    {
+      rank: "🥇 GIẢI NHẤT",
+      value: "5.000.000 VNĐ (Sinh viên) / 4.000.000 VNĐ (THPT)",
+      extra: "Giấy chứng nhận + điểm rèn luyện"
+    },
+    {
+      rank: "🥈 GIẢI NHÌ",
+      value: "4.000.000 VNĐ (Sinh viên) / 3.000.000 VNĐ (THPT)",
+      extra: ""
+    },
+    {
+      rank: "🥉 GIẢI BA",
+      value: "3.000.000 VNĐ (Sinh viên) / 2.000.000 VNĐ (THPT)",
+      extra: ""
+    },
+    {
+      rank: "🤍 YÊU THÍCH NHẤT",
+      value: "1.000.000 VNĐ",
+      extra: "Giải khuyến khích"
+    }
+  ],
+  rules: [
+    "Mỗi đội gồm 3–5 thành viên",
+    "Chia 2 bảng: THPT và Sinh viên",
+    "Bảng sinh viên có Hackathon 36h xây dựng MVP",
+    "Yêu cầu áp dụng AI vào bài toán tăng trưởng người dùng trong e-commerce"
+  ]
+  }
 ]
 
 // ── Exports cho HomePage list view ──
