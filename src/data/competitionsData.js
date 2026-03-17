@@ -101,6 +101,74 @@ export const COMPETITIONS_DATA = [
       "Top 12 đội vòng 1 vào vòng 2, Top 3 đội vào chung kết.",
     ],
   },
+  {
+  id: 3,
+  title: "CHIẾN LƯỢC XUYÊN BIÊN GIỚI XII - SCHALLENGE 2024",
+  status: "ended",
+  category: "business",
+  organizer: "CLB Kinh doanh Quốc tế (IBC) – UEL",
+  description: "Cuộc thi học thuật thường niên về kinh doanh quốc tế, mùa XII với chủ đề 'Sustainable Supply Chain'. Thí sinh giải quyết các bài toán thực tế liên quan đến chuỗi cung ứng bền vững thông qua nhiều vòng thi từ kiến thức nền đến dự án thực tế và tranh biện.",
+  poster: "/schallenge2024.jpg",
+  fee: "Miễn phí",
+  format: "Đội (BTC hỗ trợ ghép đội cho cá nhân)",
+  regPeriod: "Trước 21h00 ngày 22/09/2024",
+  eligibility: "Sinh viên các trường ĐH, CĐ, Học viện trên toàn quốc",
+  website: "https://www.uel-ibc.com/",
+  fanpage: "https://bit.ly/3ZcY6Bt",
+  email: "clbkinhdoanhquocte.ibc@st.uel.edu.vn",
+  phone: "083 362 3676 / 096 658 4638 / 033 792 9247",
+  timeline: [
+    {
+      phase: "VÒNG SƠ KHẢO: CELESTIAL AWAKENING",
+      date: "25/09/2024 – 27/09/2024",
+      desc: "Online test tiếng Anh kiểm tra kiến thức chuyên môn (có mock test cho 20 đội đầu tiên)"
+    },
+    {
+      phase: "VÒNG BÁN KẾT: HYPERSTELLAR",
+      date: "01/10/2024 – 12/10/2024",
+      desc: "Giải case study về chuỗi cung ứng bền vững (online + offline), có mentor hỗ trợ, chọn Top 4"
+    },
+    {
+      phase: "VÒNG CHUNG KẾT: SUPERNOVA",
+      date: "13/10/2024 – 10/11/2024",
+      desc: "Phát triển dự án + tranh biện để chọn quán quân"
+    },
+    {
+      phase: "GALA CHUNG KẾT",
+      date: "10/11/2024",
+      desc: "Tổ chức tại Hội trường A – UEL"
+    }
+  ],
+  prizes: [
+    {
+      rank: "🥇 QUÁN QUÂN",
+      value: "Hiện kim + học bổng & voucher (tổng giá trị lớn)",
+      extra: "WESET, Simple English, CAP Mentor, DoPassion, Wyler in Uni, KAT, DOL, The Trainee Club"
+    },
+    {
+      rank: "🥈 Á QUÂN",
+      value: "Hiện kim + học bổng & voucher",
+      extra: "Giá trị thấp hơn quán quân"
+    },
+    {
+      rank: "🥉 QUÝ QUÂN",
+      value: "Hiện kim + học bổng & voucher",
+      extra: "Giá trị thấp hơn á quân"
+    },
+    {
+      rank: "🏅 KHUYẾN KHÍCH",
+      value: "Hiện kim + học bổng & voucher",
+      extra: "Giá trị thấp nhất trong các giải"
+    }
+  ],
+  rules: [
+    "Tham gia theo đội hoặc cá nhân (được ghép đội)",
+    "Thi hoàn toàn bằng tiếng Anh ở vòng đầu",
+    "Top 4 vào chung kết",
+    "Có mentor hỗ trợ xuyên suốt vòng bán kết và chung kết"
+  ]
+  },
+
 ]
 
 // ── Exports cho HomePage list view ──
@@ -122,7 +190,7 @@ export function getStatus(item) {
 export const COMPETITIONS = [
   { id: 1,  title: 'Digital Creatory 2026 | Beyond the Limits',         organizer: 'Marketing UEL Club',          faculty: 'Marketing',           startDate: '02.4.2026',  startDateISO: '2026-04-02', endDate: '24.5.2026',  endDateISO: '2026-05-24', tags: ['digital','marketing'], image: '/digital_creatory.jpg' },
   { id: 2,  title: 'Business Intelligence Season 9',                     organizer: 'ITB Club',                    faculty: 'Information Systems', startDate: '14.5.2025',  startDateISO: '2025-05-14', endDate: '27.7.2025',  endDateISO: '2025-07-27', tags: ['business','data'],     image: '/BI.jpg' },
-  { id: 3,  title: 'Schallenge XIII – Emerald Circulation',              organizer: 'International Business Club', faculty: 'International Economics', startDate: '11.10.2024', startDateISO: '2024-10-11', endDate: '16.11.2024', endDateISO: '2024-11-16', tags: ['strategy'],            image: '/S challenge.jpg' },
+  { id: 3,  title: 'Schallenge XIII – Emerald Circulation',              organizer: 'International Business Club', faculty: 'International Economics', startDate: '11.10.2026', startDateISO: '', endDate: '', endDateISO: '', tags: ['strategy'],            image: '/S challenge.jpg' },
   { id: 4,  title: 'AI in Business Mùa 2',                              organizer: 'AI4I Club UEL',               faculty: 'Information Systems', startDate: '16.3.2025',  startDateISO: '2025-03-16', endDate: '25.5.2025',  endDateISO: '2025-05-25', tags: ['digital','AI'],        image: '/AI_in_Business.jpg' },
   { id: 5,  title: 'Vietnam SAP ERPSim Student Competition 2024',        organizer: 'IS Times – HTTT UEL',         faculty: 'Information Systems', startDate: '27.10.2024', startDateISO: '2024-10-27', endDate: '16.11.2024', endDateISO: '2024-11-16', tags: ['business','ERP'],      image: '/ERPSIM.jpg' },
   { id: 6,  title: 'Attacker Competition 2025',                          organizer: 'FinTech Club',                faculty: 'Finance and Banking', startDate: '25.5.2025',  startDateISO: '2025-05-25', endDate: '18.9.2025',  endDateISO: '2025-09-18', tags: ['digital','fintech'],   image: '/Attacker.jpg' },

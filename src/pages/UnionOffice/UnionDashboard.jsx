@@ -1,5 +1,5 @@
 import { useState, useMemo } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { users } from "../../data/usersdata";
 import { COMPETITIONS_DATA } from "../../data/competitionsData";
 import { useNotifications } from "../../NotificationContext";
@@ -36,21 +36,22 @@ const STATUS_META = {
 
 const PAGE_SIZE = 8;
 
-const NAV_TABS = [
-  { key: "events",     label: "Event Approval Management" },
-  { key: "participate",label: "Participation Management" },
-  { key: "reports",    label: "Reports" },
-];
-
 export default function UnionDashboard() {
   const navigate = useNavigate();
   const { t } = useLanguage();
   const { addNotification } = useNotifications();
   const stored   = JSON.parse(localStorage.getItem("uel_auth_user") || "null");
   const liveUser = users.find((u) => u.id === stored?.id) || stored;
-  if (!liveUser) { navigate("/login"); return null; }
+  
+  if (!liveUser) { 
+    navigate("/login"); 
+    return null; 
+  }
 
-  const [activeNav, setActiveNav] = useState("events");
+  /* ── Lấy activeNav từ URL params thay vì useState ── */
+  const [searchParams] = useSearchParams();
+  const activeNav = searchParams.get("tab") || "events";
+
   const [events, setEvents]             = useState(MOCK_EVENTS);
   const [filterStatus, setFilterStatus] = useState("all");
   const [page, setPage]                 = useState(1);
@@ -64,7 +65,8 @@ export default function UnionDashboard() {
   /* ── Filtered + paginated ── */
   const filtered = useMemo(() =>
     filterStatus === "all" ? events : events.filter(e => e.status === filterStatus),
-    [events, filterStatus]);
+    [events, filterStatus]
+  );
   const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
   const pageSlice  = filtered.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);
 
@@ -107,20 +109,9 @@ export default function UnionDashboard() {
   return (
     <div className="union-page">
       <div className="union-bg-blur" />
+      
+      {/* ── Component Header bây giờ sẽ chịu trách nhiệm điều hướng thông qua URL ── */}
       <Header />
-
-      {/* ── TOP NAV TABS ── */}
-      <div className="union-nav-tabs">
-        {NAV_TABS.map(tab => (
-          <button
-            key={tab.key}
-            className={`union-nav-tab ${activeNav === tab.key ? "active" : ""}`}
-            onClick={() => setActiveNav(tab.key)}
-          >
-            {tab.label}
-          </button>
-        ))}
-      </div>
 
       <main className="union-main">
 

@@ -19,6 +19,10 @@ export default function Header() {
   const isOrganizer = currentUser?.role === 'organizer';
   const isUnion      = currentUser?.role === 'union';
 
+  // Lấy param "tab" từ URL để active đúng menu của Union
+  const searchParams = new URLSearchParams(location.search);
+  const currentTab = searchParams.get("tab") || "events";
+
   // ── HÀM XỬ LÝ ĐĂNG XUẤT ──
   const handleLogout = () => {
     localStorage.removeItem("uel_auth_user");
@@ -66,11 +70,27 @@ export default function Header() {
           <nav className={`hdr-nav ${mobileOpen ? 'open' : ''}`}>
             <button className={`hdr-nav-link ${isActive('/home') ? 'active' : ''}`} onClick={() => navigate('/home')}>Home</button>
             
+            {/* KIỂM TRA ROLE VÀ RENDER MENU TƯƠNG ỨNG */}
             {isUnion ? (
               <>
-                <button className={`hdr-nav-link ${isActive('/union') ? 'active' : ''}`} onClick={() => navigate('/union')}>Event Approval Management</button>
-                <button className={`hdr-nav-link ${isActive('/union/participation') ? 'active' : ''}`} onClick={() => navigate('/union')}>Participation Management</button>
-                <button className={`hdr-nav-link ${isActive('/union/reports') ? 'active' : ''}`} onClick={() => navigate('/union')}>Reports</button>
+                <button 
+                  className={`hdr-nav-link ${isActive('/union') && currentTab === 'events' ? 'active' : ''}`} 
+                  onClick={() => navigate('/union?tab=events')}
+                >
+                  Event Approval Management
+                </button>
+                <button 
+                  className={`hdr-nav-link ${isActive('/union') && currentTab === 'participate' ? 'active' : ''}`} 
+                  onClick={() => navigate('/union?tab=participate')}
+                >
+                  Participation Management
+                </button>
+                <button 
+                  className={`hdr-nav-link ${isActive('/union') && currentTab === 'reports' ? 'active' : ''}`} 
+                  onClick={() => navigate('/union?tab=reports')}
+                >
+                  Reports
+                </button>
               </>
             ) : isOrganizer ? (
               <>
