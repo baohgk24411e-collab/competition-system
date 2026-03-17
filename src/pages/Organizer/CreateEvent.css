@@ -1,0 +1,273 @@
+/* CreateEvent.css */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap');
+
+.create-event-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #f4f6f9;
+  font-family: 'Outfit', 'Segoe UI', system-ui, sans-serif;
+  position: relative;
+}
+
+/* ── BLURRED UEL BACKGROUND ── */
+.ce-bg-blur {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background-image: url('/UEL_Building.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: blur(18px) brightness(0.5);
+  transform: scale(1.08);
+  pointer-events: none;
+}
+
+.ce-main {
+  flex: 1;
+  max-width: 900px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 16px 60px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── ORG HERO (mini) ── */
+.ce-org-hero {
+  background: #fff;
+  border-radius: 0 0 20px 20px;
+  overflow: hidden; /* clip buttons inside white card */
+  box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+  margin-bottom: 32px;
+  position: relative;
+  z-index: 1;
+}
+
+.ce-cover {
+  width: 100%;
+  height: 180px;
+  background: linear-gradient(135deg, #1a3a6b, #2563a2);
+  background-size: cover;
+  background-position: center;
+  flex-shrink: 0;
+}
+
+.ce-org-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 24px 20px;
+  flex-wrap: wrap;
+  gap: 12px;
+  background: #fff;
+}
+
+.ce-org-identity { display: flex; align-items: center; gap: 14px; min-width: 0; }
+
+.ce-avatar-circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  background: #f4720f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+.ce-avatar-img    { width: 100%; height: 100%; object-fit: cover; }
+.ce-avatar-letter { font-size: 44px; font-weight: 800; color: #fff; }
+
+.ce-org-name-block { min-width: 0; }
+.ce-org-name  { font-size: 20px; font-weight: 800; color: #15427d; margin: 0 0 3px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ce-org-bio   { font-size: 12px; color: #64748b; margin: 0; max-width: 340px; }
+
+.ce-org-btns { display: flex; flex-direction: row; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: flex-end; flex-shrink: 0; }
+
+.ce-btn-outline,
+.ce-btn-solid {
+  display: flex; align-items: center; gap: 6px;
+  padding: 8px 16px; border-radius: 10px;
+  font-family: inherit; font-size: 12.5px; font-weight: 600;
+  cursor: pointer; transition: all 0.2s;
+  white-space: nowrap; justify-content: center;
+}
+.ce-btn-outline { background: #f1f5f9; border: 1.5px solid #cbd5e1; color: #334155; }
+.ce-btn-outline:hover { background: #e2e8f0; }
+.ce-btn-solid   { background: #e55a1c; border: none; color: #fff; }
+.ce-btn-solid:hover { background: #c94a14; }
+
+/* ── SECTION HEADING ── */
+.ce-section-heading {
+  font-size: 22px;
+  font-weight: 800;
+  color: #1a3a6b;
+  letter-spacing: 1.5px;
+  margin: 0 0 20px;
+}
+
+/* ── FORM CARD ── */
+.ce-form-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* ── BLOCK ── */
+.ce-block-title {
+  font-size: 14px;
+  font-weight: 800;
+  color: #e55a1c;
+  letter-spacing: 1px;
+  margin: 0 0 16px;
+}
+
+/* ── BASIC INFO LAYOUT ── */
+.ce-form-layout {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.ce-img-upload {
+  width: 160px;
+  min-width: 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.ce-img-placeholder,
+.ce-img-preview {
+  width: 150px;
+  height: 160px;
+  border-radius: 12px;
+  background: #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed #cbd5e1;
+  overflow: hidden;
+}
+.ce-img-preview { border: none; object-fit: cover; }
+
+.ce-img-label {
+  font-size: 12px;
+  color: #e55a1c;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.4;
+  text-decoration: underline;
+  margin: 0;
+}
+
+/* ── FIELDS GRID ── */
+.ce-fields-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 12px 16px;
+  align-items: center;
+}
+
+.ce-field {
+  display: contents; /* let children appear in the grid */
+}
+
+.ce-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: #15427d;
+  white-space: nowrap;
+}
+
+.ce-input {
+  padding: 9px 14px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 13.5px;
+  color: #1e293b;
+  background: #f8fafc;
+  outline: none;
+  transition: border-color 0.2s;
+  width: 100%;
+}
+.ce-input:focus   { border-color: #15427d; background: #fff; }
+.ce-input.error   { border-color: #ef4444; }
+.ce-select { cursor: pointer; }
+
+/* ── TWO COL (Timeline + Participation) ── */
+.ce-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.ce-inline-fields {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 10px 12px;
+  align-items: center;
+}
+.ce-inline-fields .ce-field { display: contents; }
+
+/* ── DESCRIPTION ── */
+.ce-textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 13.5px;
+  color: #374151;
+  background: #f8fafc;
+  resize: vertical;
+  outline: none;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+.ce-textarea:focus { border-color: #15427d; background: #fff; }
+
+/* ── ACTIONS ── */
+.ce-footer-actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  padding-top: 8px;
+}
+
+.ce-action-btn {
+  padding: 11px 28px;
+  border-radius: 22px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s;
+}
+
+.ce-action-btn.preview  { background: #f1f5f9; color: #334155; }
+.ce-action-btn.preview:hover  { background: #e2e8f0; }
+.ce-action-btn.draft    { background: #e55a1c; color: #fff; }
+.ce-action-btn.draft:hover    { background: #c94a14; }
+.ce-action-btn.submit   { background: #e55a1c; color: #fff; }
+.ce-action-btn.submit:hover   { background: #c94a14; }
+
+/* Responsive */
+@media (max-width: 640px) {
+  .ce-form-layout { flex-direction: column; }
+  .ce-fields-grid { grid-template-columns: 1fr; }
+  .ce-two-col     { grid-template-columns: 1fr; gap: 20px; }
+  .ce-footer-actions { flex-direction: column; align-items: stretch; }
+}

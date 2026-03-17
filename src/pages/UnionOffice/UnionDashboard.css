@@ -1,0 +1,502 @@
+/* UnionDashboard.css */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap');
+
+/* ── PAGE WRAPPER ── */
+.union-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Outfit', 'Segoe UI', system-ui, sans-serif;
+  position: relative;
+}
+
+/* ── BACKGROUND BLUR (UEL Building) ── */
+.union-bg-blur {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background-image: url('/UEL_Building.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: blur(14px) brightness(0.45);
+  transform: scale(1.08);
+  pointer-events: none;
+}
+
+/* ── MAIN ── */
+.union-main {
+  flex: 1;
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 32px 20px 60px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── PAGE HEADER ── */
+.union-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.union-title {
+  font-size: 28px;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: 1.5px;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.4);
+  margin: 0;
+}
+
+/* ── FILTER ROW ── */
+.union-filter-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.union-filter-label {
+  font-size: 13px;
+  color: #cbd5e1;
+  font-weight: 500;
+}
+
+.union-filter-btn {
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1.5px solid rgba(255,255,255,0.3);
+  background: rgba(255,255,255,0.12);
+  color: #e2e8f0;
+  font-family: inherit;
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.union-filter-btn:hover { background: rgba(255,255,255,0.22); }
+.union-filter-btn.active { background: #15427d; border-color: #15427d; color: #fff; }
+
+/* ── TABLE ── */
+.union-table-wrap {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+}
+
+.union-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.union-table thead tr {
+  background: #add8e6;
+}
+
+.union-table th {
+  padding: 14px 16px;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #1a3a6b;
+  text-align: center;
+  white-space: nowrap;
+  border-bottom: 2px solid #93c5d8;
+}
+
+.union-table td {
+  padding: 13px 16px;
+  font-size: 13px;
+  color: #374151;
+  text-align: center;
+  border-bottom: 1px solid #f1f5f9;
+  vertical-align: middle;
+}
+
+.union-table tbody tr:last-child td { border-bottom: none; }
+.union-table tbody tr:hover { background: #f8faff; }
+
+.td-id    { font-weight: 700; color: #15427d; }
+.td-title { text-align: left; font-weight: 600; max-width: 260px; }
+.td-actions { display: flex; gap: 6px; justify-content: center; flex-wrap: wrap; }
+
+/* Clickable title */
+.td-clickable { cursor: pointer; transition: color 0.15s; }
+.td-clickable:hover { color: #e55a1c; text-decoration: underline; }
+
+/* Actions cell */
+.act-view {
+  background: none; border: none; color: #15427d;
+  font-family: inherit; font-size: 12.5px; font-weight: 700;
+  cursor: pointer; text-decoration: underline;
+  padding: 0; display: block; margin-bottom: 6px;
+}
+.act-view:hover { color: #e55a1c; }
+.act-pending-btns { display: flex; gap: 6px; flex-wrap: wrap; }
+.act-approve, .act-reject {
+  border: none; border-radius: 20px; font-family: inherit;
+  font-size: 11.5px; font-weight: 700; cursor: pointer; padding: 5px 14px; transition: all 0.2s;
+}
+.act-approve { background: #16a34a; color: #fff; }
+.act-approve:hover { background: #15803d; }
+.act-reject  { background: #dc2626; color: #fff; }
+.act-reject:hover  { background: #b91c1c; }
+
+/* ── DETAIL HEADER RIGHT (approve+reject+close row) ── */
+.union-detail-hdr-right { display: flex; gap: 10px; align-items: center; }
+
+/* ── STATUS BADGES ── */
+.union-badge {
+  display: inline-block;
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+}
+.s-pending   { background: #e5e7eb; color: #374151; }
+.s-approved  { background: #16a34a; color: #fff; }
+.s-rejected  { background: #dc2626; color: #fff; }
+.s-published { background: #0ea5e9; color: #fff; }
+
+/* ── TABLE ACTION BUTTONS ── */
+.union-view-btn,
+.union-approve-btn,
+.union-reject-btn {
+  border: none;
+  border-radius: 16px;
+  font-family: inherit;
+  font-size: 11.5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.union-view-btn    { background: #f1f5f9; color: #15427d; padding: 6px 14px; }
+.union-view-btn:hover { background: #dbeafe; }
+.union-approve-btn.small { background: #16a34a; color: #fff; padding: 6px 12px; }
+.union-approve-btn.small:hover { background: #15803d; }
+.union-reject-btn.small  { background: #dc2626; color: #fff; padding: 6px 12px; }
+.union-reject-btn.small:hover  { background: #b91c1c; }
+
+/* ── PAGINATION ── */
+.union-pagination {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 6px;
+  margin-top: 16px;
+}
+
+.union-page-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  border: none;
+  background: rgba(255,255,255,0.85);
+  color: #15427d;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.union-page-btn:hover  { background: #15427d; color: #fff; }
+.union-page-btn.active { background: #15427d; color: #fff; }
+
+/* ─────────── DETAIL OVERLAY ─────────── */
+.union-detail-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  z-index: 200;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 40px 16px;
+  overflow-y: auto;
+  backdrop-filter: blur(4px);
+}
+
+.union-detail-panel {
+  background: #fff;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 780px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  overflow: hidden;
+}
+
+.union-detail-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 28px;
+  border-bottom: 2px solid #f1f5f9;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.union-detail-heading {
+  font-size: 20px;
+  font-weight: 800;
+  color: #15427d;
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+.union-detail-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.detail-approve-btn,
+.detail-reject-btn,
+.union-close-btn {
+  border: none;
+  border-radius: 22px;
+  font-family: inherit;
+  font-size: 13.5px;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 10px 22px;
+  transition: all 0.2s;
+}
+.detail-approve-btn { background: #16a34a; color: #fff; }
+.detail-approve-btn:hover { background: #15803d; }
+.detail-reject-btn  { background: #dc2626; color: #fff; }
+.detail-reject-btn:hover  { background: #b91c1c; }
+.union-close-btn    { background: #f1f5f9; color: #64748b; padding: 10px 14px; }
+.union-close-btn:hover { background: #e2e8f0; }
+
+.union-detail-body  { padding: 24px 28px 32px; }
+
+.union-detail-org-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.union-detail-org-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #e55a1c;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+.union-detail-org-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: #15427d;
+}
+
+.union-detail-content {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.union-detail-poster {
+  width: 200px;
+  min-width: 200px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.union-detail-poster img { width: 100%; object-fit: cover; border-radius: 12px; }
+
+.union-detail-info { flex: 1; }
+.union-detail-title { font-size: 15px; font-weight: 800; color: #e55a1c; margin: 0 0 12px; line-height: 1.4; }
+.union-detail-desc  { font-size: 13px; color: #374151; line-height: 1.7; margin: 0 0 12px; }
+
+.union-detail-section  { margin-top: 20px; border-top: 1px solid #f1f5f9; padding-top: 16px; }
+.union-section-label   { font-size: 13px; font-weight: 800; color: #e55a1c; letter-spacing: 1px; margin: 0 0 12px; }
+
+.union-timeline-item {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 10px;
+  align-items: flex-start;
+}
+.union-tl-dot {
+  width: 10px; height: 10px; border-radius: 50%;
+  background: #15427d; flex-shrink: 0; margin-top: 5px;
+}
+.union-tl-date { color: #64748b; font-size: 12.5px; margin-left: 4px; }
+
+/* ─────────── MODALS ─────────── */
+.union-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 500;
+  backdrop-filter: blur(4px);
+}
+
+.union-modal {
+  background: #fff;
+  border-radius: 20px;
+  padding: 36px 32px 28px;
+  width: 90%;
+  max-width: 420px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+  position: relative;
+  text-align: center;
+}
+.union-modal.wide { max-width: 520px; text-align: left; }
+
+.union-modal-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 28px;
+  height: 28px;
+  background: #dc2626;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.union-modal-close:hover { background: #b91c1c; }
+
+.union-modal-title {
+  font-size: 18px;
+  font-weight: 800;
+  margin: 0 0 10px;
+  letter-spacing: 1px;
+}
+.union-modal-title.orange { color: #e55a1c; }
+
+.union-modal-sub {
+  font-size: 13.5px;
+  color: #374151;
+  margin: 0 0 8px;
+  line-height: 1.6;
+}
+
+.union-modal-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 24px;
+}
+.union-modal-actions.center { justify-content: center; }
+
+.um-btn {
+  border: none;
+  border-radius: 20px;
+  padding: 10px 26px;
+  font-family: inherit;
+  font-size: 13.5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.um-btn.cancel  { background: #e5e7eb; color: #374151; }
+.um-btn.cancel:hover { background: #d1d5db; }
+.um-btn.approve { background: #16a34a; color: #fff; }
+.um-btn.approve:hover { background: #15803d; }
+
+.um-icon-success {
+  width: 56px;
+  height: 56px;
+  background: #16a34a;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 26px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+}
+
+/* Reject form */
+.um-form { text-align: left; margin: 16px 0; }
+.um-field { margin-bottom: 14px; }
+.um-field label { font-size: 13px; font-weight: 700; color: #374151; display: block; margin-bottom: 6px; }
+.um-input, .um-textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 13px;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+}
+.um-input:focus, .um-textarea:focus { border-color: #15427d; }
+.um-textarea { resize: vertical; }
+
+/* ── TOP NAV TABS ── */
+.union-nav-tabs {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  background: rgba(15, 30, 60, 0.75);
+  backdrop-filter: blur(8px);
+  border-bottom: 2px solid rgba(255,255,255,0.1);
+  padding: 0 20px;
+}
+
+.union-nav-tab {
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.65);
+  font-family: inherit;
+  font-size: 13.5px;
+  font-weight: 600;
+  padding: 16px 22px;
+  cursor: pointer;
+  transition: all 0.2s;
+  border-bottom: 3px solid transparent;
+  white-space: nowrap;
+}
+.union-nav-tab:hover  { color: #fff; }
+.union-nav-tab.active { color: #fff; border-bottom-color: #e55a1c; }
+
+/* Placeholder panel */
+.union-placeholder {
+  background: rgba(255,255,255,0.9);
+  border-radius: 16px;
+  padding: 80px 20px;
+  text-align: center;
+  color: #64748b;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+.union-placeholder span { font-size: 48px; display: block; margin-bottom: 12px; }
+.union-placeholder p    { font-size: 15px; }
+
+/* Responsive */
+@media (max-width: 700px) {
+  .union-table th:nth-child(4),
+  .union-table td:nth-child(4) { display: none; }
+  .union-detail-content { flex-direction: column; }
+  .union-detail-poster  { width: 100%; min-width: unset; }
+  .union-nav-tabs { overflow-x: auto; }
+  .union-nav-tab  { padding: 14px 14px; font-size: 12.5px; }
+}

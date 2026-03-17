@@ -1,0 +1,143 @@
+@import './Competition.css'; 
+
+/* ══════════════════════════════════════════════════
+   HERO BANNER ĐỘC LẬP (Không ảnh hưởng Competition)
+══════════════════════════════════════════════════ */
+.conf-hero {
+  height: 80vh; 
+  position: relative;
+  overflow: hidden; 
+  background-color: #000; 
+}
+
+.conf-hero-slide {
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.85s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1;
+}
+
+.conf-hero-slide.active { opacity: 1; z-index: 2; }
+
+/* Ảnh nền blur */
+.conf-hero-bg-blurry {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background-size: cover; 
+  background-position: center;
+  filter: blur(20px);
+  -webkit-filter: blur(20px);
+  transform: scale(1.1); 
+  opacity: 0.6; 
+  z-index: 1; 
+}
+
+/* Ảnh chính không bị stretch */
+.conf-hero-img-main {
+  position: relative;
+  z-index: 2; 
+  max-width: 100%; 
+  max-height: 100%; 
+  object-fit: contain; 
+  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5);
+}
+
+/* Nút bấm và dấu chấm chuyển slide */
+.conf-hero-btn {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.2); color: #fff; 
+  border: none; width: 46px; height: 46px; border-radius: 50%;
+  font-size: 1.3rem; backdrop-filter: blur(8px);
+  cursor: pointer; z-index: 10; transition: all 0.2s;
+  display: flex; align-items: center; justify-content: center;
+}
+.conf-hero-btn:hover { background: rgba(255, 255, 255, 0.5); transform: translateY(-50%) scale(1.1); }
+.conf-hero-btn.prev { left: 20px; }
+.conf-hero-btn.next { right: 20px; }
+
+.conf-hero-dots {
+  position: absolute; bottom: 24px; left: 50%; transform: translateX(-50%);
+  display: flex; gap: 8px; z-index: 10;
+}
+.conf-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4); border: none; padding: 0;
+  transition: all 0.3s ease; cursor: pointer;
+}
+.conf-dot.active { background: #ea580c; transform: scale(1.35); }
+
+
+/* ══════════════════════════════════════════════════
+   3D HORIZONTAL COVERFLOW (Giữ nguyên phần Card 3D)
+══════════════════════════════════════════════════ */
+.hz-3d-wrap {
+  position: relative; width: 100%; height: 560px;
+  display: flex; align-items: center; justify-content: center;
+  z-index: 5; perspective: 1600px;
+}
+.hz-3d-stage {
+  position: relative; width: 100%; height: 100%;
+  display: flex; align-items: center; justify-content: center;
+  transform-style: preserve-3d;
+}
+.hz-3d-card {
+  position: absolute; width: 380px; height: auto; border-radius: 24px;
+  cursor: pointer; transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.6s;
+  will-change: transform, opacity;
+}
+
+.hz-card-inner {
+  background: rgba(255, 255, 255, 0.35); 
+  backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.4); border-radius: 24px;
+  overflow: hidden; display: flex; flex-direction: column; height: 100%;
+  pointer-events: none; transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.hz-3d-card.hz-abs-0 .hz-card-inner { 
+  pointer-events: auto; 
+  background: rgba(255, 255, 255, 0.85); 
+  border: 1px solid rgba(255, 255, 255, 0.95);
+}
+
+.hz-3d-card.hz-off-pos-1 { transform: translateX(380px) scale(0.85) rotateY(-18deg); opacity: 0.7; z-index: 2; }
+.hz-3d-card.hz-off-neg-1 { transform: translateX(-380px) scale(0.85) rotateY(18deg); opacity: 0.7; z-index: 2; }
+.hz-3d-card.hz-off-pos-2 { transform: translateX(650px) scale(0.7) rotateY(-28deg); opacity: 0.3; z-index: 1; }
+.hz-3d-card.hz-off-neg-2 { transform: translateX(-650px) scale(0.7) rotateY(28deg); opacity: 0.3; z-index: 1; }
+.hz-3d-card.hz-abs-0     { transform: translateX(0) scale(1.05) rotateY(0deg); opacity: 1; z-index: 5; box-shadow: 0 30px 60px rgba(0,0,0,0.15); }
+
+.hz-poster-wrap { position: relative; width: 100%; aspect-ratio: 16 / 9; background: rgba(255, 255, 255, 0.4); overflow: hidden; }
+.hz-poster { width: 100%; height: 100%; object-fit: cover; }
+.hz-badges { position: absolute; top: 12px; right: 12px; display: flex; gap: 6px; z-index: 10; }
+
+.hz-info { padding: 24px; display: flex; flex-direction: column; flex: 1; }
+.hz-org { display: flex; align-items: center; gap: 8px; font-size: 0.75rem; font-weight: 700; color: #ea580c; margin-bottom: 8px; text-transform: uppercase; }
+.hz-logo { width: 20px; height: 20px; border-radius: 50%; border: 1px solid rgba(0,0,0,0.1); }
+.hz-title { font-size: 1.15rem; font-weight: 800; color: #1a3a6e; line-height: 1.4; margin-bottom: 12px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.hz-meta { display: flex; flex-direction: column; gap: 6px; font-size: 0.85rem; color: #475569; margin-bottom: 20px; flex: 1; }
+.hz-detail-btn { width: 100%; padding: 12px; background: #ea580c; color: #fff; border: none; border-radius: 50px; font-weight: 700; font-size: 0.85rem; cursor: pointer; transition: all 0.2s; text-align: center; }
+.hz-detail-btn:hover { background: #c2410c; transform: translateY(-2px); }
+
+.hz-arrow { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(8px); border: 1px solid rgba(26,58,110,0.1); width: 48px; height: 48px; border-radius: 50%; z-index: 10; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(0,0,0,0.1); cursor: pointer; color: #1a3a6e; font-size: 1.2rem; transition: all 0.2s; }
+.hz-arrow:hover { background: #1a3a6e; color: #fff; transform: translateY(-50%) scale(1.1); }
+.hz-arrow.left { left: 30px; } .hz-arrow.right { right: 30px; }
+
+.hz-pill-dots { position: absolute; bottom: 0px; left: 50%; transform: translateX(-50%); display: flex; gap: 10px; z-index: 30; align-items: center; }
+.pill-dot { width: 12px; height: 12px; border-radius: 50%; background: rgba(100, 116, 139, 0.3); border: none; transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1); cursor: pointer; padding: 0; }
+.pill-dot.active { width: 36px; border-radius: 12px; background: #ea580c; }
+
+@media (max-width: 768px) {
+  .hz-3d-wrap { height: 500px; }
+  .hz-3d-card { width: 280px; }
+  .hz-3d-card.hz-off-pos-1 { transform: translateX(200px) scale(0.8) rotateY(-20deg); }
+  .hz-3d-card.hz-off-neg-1 { transform: translateX(-200px) scale(0.8) rotateY(20deg); }
+  .hz-3d-card.hz-off-pos-2 { transform: translateX(360px) scale(0.6) rotateY(-30deg); }
+  .hz-3d-card.hz-off-neg-2 { transform: translateX(-360px) scale(0.6) rotateY(30deg); }
+  .hz-arrow { display: none; } 
+}

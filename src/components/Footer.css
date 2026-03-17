@@ -1,0 +1,318 @@
+/* ===== FOOTER ===== */
+.site-footer {
+  width: 100%;
+  background: #1a3a6b;
+  font-family: 'Inter', sans-serif;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Watermark mờ phía sau */
+.site-footer::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('/UEL_Logo.png');
+  background-repeat: no-repeat;
+  background-position: center right 10%;
+  background-size: 500px;
+  opacity: 0.06;
+  pointer-events: none;
+}
+
+/* ── Body ── */
+.footer-body {
+  display: flex;
+  gap: 80px;
+  padding: 52px 60px 40px;
+  position: relative;
+  z-index: 1;
+  align-items: flex-start;
+}
+
+/* ── Cột trái ── */
+.footer-left {
+  flex: 1.2;
+  max-width: 500px;
+  text-align: center;
+}
+
+/* Logo ACMS */
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  justify-content: flex-start;
+}
+
+.footer-logo-img {
+  width: 200px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 0;
+  background: none;
+  padding: 0;
+  margin-bottom: 16px;
+}
+
+.footer-logo-text {
+  font-size: 26px;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+/* Mô tả */
+.footer-desc {
+  font-size: 14px;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 28px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.footer-see-more {
+  color: #fff;
+  font-weight: 700;
+  text-decoration: underline;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.footer-see-more:hover { color: #e67e22; }
+
+/* Contact */
+.footer-contact {
+  font-size: 14px;
+  line-height: 1.9;
+  color: rgba(255, 255, 255, 0.85);
+  text-align: center;
+}
+
+.footer-contact-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 1.5px;
+  margin-bottom: 8px;
+}
+
+/* ── Cột phải (newsletter) ── */
+.footer-right {
+  flex: 1;
+  max-width: 440px;
+  display: flex;
+  flex-direction: column;
+  padding-top: 4px;
+}
+
+.footer-nl-title {
+  font-size: 16px;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: 1.5px;
+  margin-bottom: 12px;
+  text-align: right;
+}
+
+.footer-nl-divider {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  margin: 0 0 16px;
+}
+
+.footer-nl-sub {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.6;
+  margin-bottom: 20px;
+  text-align: right;
+}
+
+.footer-nl-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.footer-email-input {
+  flex: 1;
+  padding: 13px 20px;
+  border-radius: 30px;
+  border: none;
+  font-size: 14px;
+  font-family: 'Inter', sans-serif;
+  background: rgba(255, 255, 255, 0.92);
+  color: #333;
+  outline: none;
+  transition: box-shadow 0.2s;
+}
+
+.footer-email-input:focus {
+  box-shadow: 0 0 0 3px rgba(230, 126, 34, 0.4);
+  background: #fff;
+}
+
+.footer-email-input::placeholder { color: #9ca3af; }
+
+.footer-send-btn {
+  background: #e67e22;
+  color: #fff;
+  border: none;
+  padding: 13px 28px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+  box-shadow: 0 3px 12px rgba(230, 126, 34, 0.4);
+}
+
+.footer-send-btn:hover {
+  background: #d35400;
+  transform: translateY(-1px);
+  box-shadow: 0 5px 16px rgba(230, 126, 34, 0.5);
+}
+
+.footer-sent-msg {
+  margin-top: 10px;
+  font-size: 13px;
+  color: #86efac;
+  font-weight: 500;
+  text-align: right;
+}
+
+/* ── Đường kẻ ── */
+.footer-divider {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  margin: 0 60px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Bottom bar ── */
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 60px;
+  position: relative;
+  z-index: 1;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+/* UEL brand */
+.footer-uel-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.footer-uel-img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+}
+
+.footer-uel-text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.footer-uel-text span {
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  line-height: 1.4;
+}
+
+/* Social icons */
+.footer-social {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-social-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  margin-right: 8px;
+  white-space: nowrap;
+}
+
+.footer-social-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.footer-social-btn:hover {
+  background: #e67e22;
+  border-color: #e67e22;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(230, 126, 34, 0.45);
+}
+
+/* ── Copyright ── */
+.footer-copyright {
+  background: rgba(0, 0, 0, 0.2);
+  text-align: center;
+  padding: 13px 24px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.7);
+  position: relative;
+  z-index: 1;
+}
+
+/* ══ RESPONSIVE ══ */
+@media (max-width: 900px) {
+  .footer-body {
+    flex-direction: column;
+    padding: 36px 24px 24px;
+    gap: 32px;
+  }
+
+  .footer-left { max-width: 100%; }
+  .footer-right { max-width: 100%; }
+
+  .footer-nl-title,
+  .footer-nl-sub,
+  .footer-sent-msg { text-align: left; }
+
+  .footer-bottom {
+    padding: 16px 24px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-divider { margin: 0 24px; }
+}
+
+@media (max-width: 480px) {
+  .footer-nl-row { flex-direction: column; }
+  .footer-send-btn { width: 100%; }
+  .footer-social { flex-wrap: wrap; }
+  .footer-logo-text { font-size: 20px; }
+}

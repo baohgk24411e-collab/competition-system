@@ -1,0 +1,171 @@
+/* ══════════════════════════════════════════════════════════════
+   HEADER - CHUẨN XÁC THEO HÌNH ẢNH THIẾT KẾ
+══════════════════════════════════════════════════════════════ */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  background-color: #ffffff; /* Nền trắng chủ đạo */
+  height: 84px; /* Tăng chiều cao lên một chút để cân đối */
+  border-top: 10px solid #15427d; /* 1. LÀM DÀY ĐƯỜNG VIỀN XANH TRÊN CÙNG */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  display: flex;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+/* ── TRÁI: Khu vực Logo ── */
+.hdr-logo-zone {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Đảm bảo logo luôn nằm giữa khối trắng */
+  width: 32%; /* 1. Thu hẹp phần màu trắng lại (trước đây là 42%) */
+  max-width: 450px; /* Giới hạn độ rộng tối đa để không bị bè ra */
+  height: 100%;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.hdr-logo-img {
+  height: 52px; 
+  width: auto;
+  object-fit: contain;
+}
+
+/* ── PHẢI: Khu vực chia 2 dòng ── */
+.hdr-right-zone {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* DÒNG TRÊN (Nền xanh navy, vát chéo cạnh trái) */
+.hdr-top-bar {
+  flex: 1; /* Chiếm nửa trên */
+  background-color: #15427d;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 24px;
+  /* 2. Đảo góc chéo thành \ (trên tiến ra, dưới thụt vào) tạo hình thang cho nền trắng */
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 40px 100%);
+  margin-left: -20px; /* Kéo nhẹ sang trái để liền mạch, xóa mũi nhọn */
+}
+
+/* Tiện ích dòng trên */
+.hdr-utilities {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.hdr-lang {
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+  font-size: 14px;
+}
+.hdr-lang span { margin: 0 6px; font-weight: 300; opacity: 0.8; }
+.hdr-lang button {
+  background: transparent; border: none; color: #ffffff;
+  cursor: pointer; font-weight: 400; padding: 0; transition: font-weight 0.2s;
+}
+.hdr-lang button.active { font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+
+.hdr-icon-btn {
+  background: transparent; border: none; color: #ffffff;
+  cursor: pointer; position: relative; display: flex; align-items: center;
+  transition: transform 0.2s;
+}
+.hdr-icon-btn:hover { transform: scale(1.1); }
+.hdr-icon-btn svg { width: 18px; height: 18px; }
+
+.hdr-badge {
+  position: absolute; top: -6px; right: -6px;
+  background: #ea580c; color: #ffffff; font-size: 10px; font-weight: 700;
+  width: 15px; height: 15px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+}
+
+.hdr-avatar {
+  background: #ea580c; border: 1.5px solid #ffffff; color: #ffffff;
+  width: 28px; height: 28px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; transition: transform 0.2s;
+}
+.hdr-avatar:hover { transform: scale(1.05); }
+.hdr-avatar svg { width: 16px; height: 16px; }
+
+/* DÒNG DƯỚI (Nền trắng, Menu Nav + Hamburger) */
+.hdr-bottom-bar {
+  flex: 1; /* Chiếm nửa dưới (40px) */
+  display: flex;
+  align-items: center;
+  padding-right: 24px;
+}
+
+.hdr-nav {
+  flex: 1;
+  display: flex;
+  justify-content: center; /* Căn giữa menu trên nền trắng */
+  gap: 36px;
+}
+
+.hdr-nav-link {
+  background: transparent; border: none;
+  color: #15427d; font-size: 15px; font-weight: 600;
+  cursor: pointer; padding: 4px 0;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s;
+}
+.hdr-nav-link:hover { color: #ea580c; }
+.hdr-nav-link.active {
+  border-bottom: 2px solid #15427d;
+  font-weight: 700;
+}
+
+/* Nút Hamburger (Nằm bên phải dòng dưới) */
+.hdr-hamburger {
+  background: transparent; border: none; cursor: pointer;
+  display: flex; flex-direction: column; justify-content: space-between;
+  width: 22px; height: 15px; padding: 0; margin-left: 20px;
+}
+.hdr-hamburger span {
+  display: block; width: 100%; height: 2.5px;
+  background: #15427d; border-radius: 2px;
+  transition: all 0.3s;
+}
+.hdr-hamburger.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.hdr-hamburger.open span:nth-child(2) { opacity: 0; }
+.hdr-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+/* Dropdown styling */
+.hdr-dd-wrap { position: relative; }
+.hdr-dropdown {
+  position: absolute; top: calc(100% + 15px); right: 0;
+  background: #fff; border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(10,25,60,.15); overflow: hidden;
+  z-index: 300; min-width: 200px;
+}
+/* Các style của dd-title, dd-empty... giữ nguyên từ cũ nếu bạn cần dùng */
+
+/* Mobile menu */
+.hdr-mobile-menu {
+  position: absolute; top: 80px; left: 0; right: 0;
+  background: #ffffff; border-top: 1px solid #eee;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+.hdr-mobile-link {
+  display: block; width: 100%; text-align: left;
+  padding: 14px 24px; background: none; border: none;
+  border-bottom: 1px solid #f5f5f5;
+  color: #15427d; font-size: 15px; font-weight: 600; cursor: pointer;
+}
+.hdr-mobile-link:hover, .hdr-mobile-link.active { color: #ea580c; background: #fafafa; }
+
+/* Responsive cơ bản */
+@media (max-width: 900px) {
+  .hdr-nav { display: none; }
+  .hdr-bottom-bar { justify-content: flex-end; }
+}

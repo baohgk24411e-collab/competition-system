@@ -1,0 +1,169 @@
+/* UnionReports.css */
+
+.ur-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 8px;
+}
+
+/* ── STAT CARDS ── */
+.ur-stat-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.ur-stat-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 22px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.1);
+  border-top: 4px solid transparent;
+}
+.ur-stat-card.blue   { border-color: #15427d; }
+.ur-stat-card.orange { border-color: #e55a1c; }
+.ur-stat-card.green  { border-color: #16a34a; }
+.ur-stat-card.gray   { border-color: #64748b; }
+
+.ur-stat-num {
+  font-size: 38px;
+  font-weight: 800;
+  color: #15427d;
+  line-height: 1;
+}
+.ur-stat-card.orange .ur-stat-num { color: #e55a1c; }
+.ur-stat-card.green  .ur-stat-num { color: #16a34a; }
+.ur-stat-card.gray   .ur-stat-num { color: #64748b; }
+
+.ur-stat-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #64748b;
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* ── CHARTS ROW ── */
+.ur-charts-row {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 20px;
+}
+
+.ur-chart-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 22px 24px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.1);
+}
+.ur-chart-card.compact {
+  padding: 22px 20px;
+}
+
+.ur-chart-title {
+  font-size: 14px;
+  font-weight: 800;
+  color: #15427d;
+  margin: 0 0 16px;
+  letter-spacing: 0.5px;
+}
+
+/* ── SVG BAR CHART ── */
+.ur-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ── DONUT ── */
+.ur-donut-wrap {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.ur-donut {
+  width: 160px;
+  height: 160px;
+  flex-shrink: 0;
+}
+
+.ur-legend {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.ur-legend li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  color: #374151;
+  font-weight: 500;
+}
+.ur-legend-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ── TABLE ── */
+.ur-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+.ur-table th {
+  background: #f0f6ff;
+  color: #15427d;
+  font-weight: 700;
+  padding: 10px 14px;
+  text-align: left;
+  border-bottom: 2px solid #dbeafe;
+}
+.ur-table td {
+  padding: 10px 14px;
+  color: #374151;
+  border-bottom: 1px solid #f1f5f9;
+  vertical-align: middle;
+}
+.ur-table tbody tr:last-child td { border-bottom: none; }
+.ur-table tbody tr:hover { background: #f8faff; }
+
+.ur-cat-badge {
+  background: #eff6ff;
+  color: #3b5ea6;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+  text-transform: capitalize;
+}
+.ur-status-badge {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+  text-transform: capitalize;
+}
+.ur-s-ongoing  { background: #dcfce7; color: #16a34a; }
+.ur-s-ended    { background: #fee2e2; color: #dc2626; }
+.ur-s-upcoming { background: #fef9c3; color: #d97706; }
+.ur-s-draft    { background: #f1f5f9; color: #64748b; }
+
+/* Responsive */
+@media (max-width: 900px) {
+  .ur-stat-row    { grid-template-columns: repeat(2, 1fr); }
+  .ur-charts-row  { grid-template-columns: 1fr; }
+}
+@media (max-width: 500px) {
+  .ur-stat-row    { grid-template-columns: 1fr 1fr; }
+}
