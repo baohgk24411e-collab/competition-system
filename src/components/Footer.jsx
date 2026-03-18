@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useLanguage } from '../LanguageContext';
-import logoAcms from "/logo.png";
-import logoUel  from "/UEL_Logo.png";
+const logoAcms = "/logo.png";
+const logoUel  = "/UEL_Logo.png";
 import "./Footer.css";
 
 const SOCIAL_LINKS = [
