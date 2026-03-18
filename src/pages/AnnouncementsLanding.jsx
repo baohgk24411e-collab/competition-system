@@ -17,7 +17,13 @@ export default function AnnouncementsLanding() {
   };
 
   return (
-    <div className="auth-page" style={{ height: 'auto', minHeight: '100vh', background: '#f8fafc' }}>
+    <div className="auth-page" style={{ height: 'auto', minHeight: '100vh', position: 'relative' }}>
+      {/* Background Images */}
+      <div style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', zIndex: -2 }}>
+        <img src="/UEL_Building.jpg" alt="Background" style={{ width: '100%', height: '100%', objectFit: 'cover', filter: 'blur(8px)', transform: 'scale(1.05)' }} />
+      </div>
+      <div style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', backgroundColor: 'rgba(255, 255, 255, 0.7)', zIndex: -1 }}></div>
+
       <nav className="top-navbar">
         <div className="top-navbar-left">
           <img src="/UEL_Logo.png" alt="UEL Logo" className="uel-logo-nav" />
