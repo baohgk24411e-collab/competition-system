@@ -2,6 +2,8 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { COMPETITIONS_DATA } from './data/competitionsData';
 import dcImg  from '/digital_creatory.jpg';
 import erpImg from '/ERPSIM.jpg';
+import S_Challenge from '/S_challenge.jpg';
+import AI4I from '/AI_in_Business.jpg';
 import { useLanguage } from './LanguageContext';
 import { getOrgLogo } from './data/orgLogos';
 import { useNotifications } from './NotificationContext';
@@ -13,6 +15,7 @@ import './CompetitionDetail.css';
 const POSTER_IMAGES = {
   1: dcImg,
   5: erpImg,
+  7: AI4I,
 };
 
 const CompetitionDetail = () => {
@@ -31,7 +34,7 @@ const CompetitionDetail = () => {
     <div className="cd-page">
       <Header />
       {/* ── NỀN BLUR TOÀN TRANG ── */}
-      <div className="cd-page-blur-bg" style={{ backgroundImage: `url(${posterSrc})` }} />
+      <div className="cd-page-blur-bg" style={{ backgroundImage: `url("${posterSrc}")` }} />
       <div className="cd-page-blur-overlay" />
 
       {/* ── CONTENT ── */}

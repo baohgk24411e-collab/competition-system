@@ -108,7 +108,7 @@ export const COMPETITIONS_DATA = [
   category: "business",
   organizer: "CLB Kinh doanh Quốc tế (IBC) – UEL",
   description: "Cuộc thi học thuật thường niên về kinh doanh quốc tế, mùa XII với chủ đề 'Sustainable Supply Chain'. Thí sinh giải quyết các bài toán thực tế liên quan đến chuỗi cung ứng bền vững thông qua nhiều vòng thi từ kiến thức nền đến dự án thực tế và tranh biện.",
-  poster: "/S challenge.jpg",
+  poster: "/S_challenge.jpg",
   fee: "Miễn phí",
   format: "Đội (BTC hỗ trợ ghép đội cho cá nhân)",
   regPeriod: "Trước 21h00 ngày 22/09/2024",
