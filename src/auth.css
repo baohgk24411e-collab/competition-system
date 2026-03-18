@@ -753,158 +753,196 @@
   .landing-title-accent { font-size: 34px; }
 }
 
-/* ===== LANDING SECTIONS ===== */
-.landing-section {
-  padding: 60px 24px;
-  max-width: 1200px;
-  margin: 0 auto;
-  width: 100%;
-}
-
-.landing-section.bg-light {
-  background: #fff;
-  max-width: none;
-  padding: 60px 10vw;
-}
-
-.section-title {
-  text-align: center;
-  font-family: 'Outfit', sans-serif;
-  font-size: 32px;
-  color: #15427d;
-  margin-bottom: 40px;
-  font-weight: 800;
-  letter-spacing: 0.5px;
-}
-
-/* ABOUT US SECTION */
-.about-content p {
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto 40px auto;
-  color: #4b5563;
-  line-height: 1.7;
-  font-size: 15px;
-}
-
-.about-grid {
+/* ===== 3 DEMO CARDS ROW ===== */
+.demo-cards-container {
+  max-width: 1400px;
+  width: 90%;
+  margin: -120px auto 60px auto; 
+  position: relative;
+  z-index: 10;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
 }
 
-.about-card {
-  background: #fff;
-  border-radius: 16px;
-  padding: 30px 24px;
-  text-align: center;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.04);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 1px solid rgba(21, 66, 125, 0.05);
+.demo-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  border-top: 5px solid #15427d;
 }
 
-.about-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(21, 66, 125, 0.1);
-}
-
-.about-card h3 {
-  color: #e55a1c;
-  margin-bottom: 12px;
-  font-size: 20px;
-  font-weight: 700;
-}
-
-.about-card p {
-  margin: 0;
-  font-size: 14px;
-  color: #64748b;
-  line-height: 1.6;
-}
-
-/* ANNOUNCEMENTS SECTION */
-.announcement-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 24px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.anno-card {
+.demo-card-title {
   background: #f8fafc;
-  border-left: 4px solid #15427d;
+  margin: 0;
+  padding: 20px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  color: #15427d;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.demo-card-content {
   padding: 24px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Card 1: ABOUT US */
+.demo-desc {
+  font-size: 14px;
+  color: #475569;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.demo-btn {
+  background: #e55a1c;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  align-self: flex-start;
+  margin-bottom: 24px;
+  transition: background 0.2s;
+}
+
+.demo-btn:hover {
+  background: #c94a14;
+}
+
+.demo-about-images {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.demo-about-logo {
+  height: 40px;
+  object-fit: contain;
+  align-self: flex-start;
+}
+
+.demo-about-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.demo-about-grid img {
+  width: 100%;
+  aspect-ratio: 1.2;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+/* Card 2: ANNOUNCEMENTS */
+.demo-anno-item {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.demo-anno-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.demo-anno-img {
+  width: 100px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.demo-anno-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.demo-anno-date {
+  font-size: 12px;
+  color: #64748b;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.demo-anno-text h4 {
+  margin: 0 0 8px 0;
+  font-size: 15px;
+  color: #1e293b;
+  line-height: 1.4;
+}
+
+.demo-anno-text a {
+  font-size: 13px;
+  color: #e55a1c;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.demo-anno-text a:hover {
+  text-decoration: underline;
+}
+
+/* Card 3: GUIDELINES */
+.demo-guides-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  align-content: start;
+}
+
+.demo-guide-box {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
   border-radius: 8px;
+  padding: 20px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
   transition: all 0.2s;
   cursor: pointer;
 }
 
-.anno-card:hover {
-  background: #f1f5f9;
-  border-left-color: #e55a1c;
+.demo-guide-box:hover {
+  background: white;
+  border-color: #15427d;
+  box-shadow: 0 4px 12px rgba(21, 66, 125, 0.08);
+  transform: translateY(-2px);
 }
 
-.anno-date {
-  font-size: 12px;
-  color: #64748b;
-  font-weight: 600;
-  display: block;
-  margin-bottom: 8px;
+.demo-guide-icon {
+  font-size: 28px;
 }
 
-.anno-card h4 {
-  color: #1e293b;
-  font-size: 18px;
-  margin-bottom: 8px;
-  line-height: 1.4;
-  font-weight: 600;
-}
-
-.anno-card p {
-  color: #475569;
+.demo-guide-box span:not(.demo-guide-icon) {
   font-size: 14px;
-  line-height: 1.6;
-}
-
-/* GUIDELINES SECTION */
-.guideline-steps {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 30px;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.step-item {
-  text-align: center;
-  position: relative;
-}
-
-.step-number {
-  width: 50px;
-  height: 50px;
-  background: linear-gradient(135deg, #15427d, #2471c4);
-  color: #fff;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 22px;
-  font-weight: 700;
-  margin: 0 auto 20px auto;
-  box-shadow: 0 4px 14px rgba(21, 66, 125, 0.3);
-}
-
-.step-item h4 {
-  color: #1e293b;
-  margin-bottom: 10px;
-  font-size: 18px;
   font-weight: 600;
+  color: #334155;
+  line-height: 1.3;
 }
 
-.step-item p {
-  color: #475569;
-  font-size: 14px;
-  line-height: 1.6;
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .demo-cards-container {
+    grid-template-columns: 1fr;
+    margin-top: 0; /* Removing negative margin on mobile so it doesn't overlap weirdly */
+    padding: 20px 0;
+  }
 }

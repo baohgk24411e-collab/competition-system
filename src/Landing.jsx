@@ -107,6 +107,77 @@ function Landing() {
           </button>
         </div>
       </div>
+
+      {/* ===== 3 CARDS ROW ===== */}
+      <div className="demo-cards-container">
+        {/* Card 1: ABOUT US */}
+        <div className="demo-card">
+          <h2 className="demo-card-title">1. ABOUT US</h2>
+          <div className="demo-card-content">
+            <p className="demo-desc">
+              ACMS is Academic Competition Management System. A robust platform designed to centralize and streamline all academic competitions and events. It serves as your primary hub for discovering, organizing, and tracking academic excellence.
+            </p>
+            <button className="demo-btn">Learn more</button>
+            <div className="demo-about-images">
+              <img src="/logo.png" alt="ACMS Logo" className="demo-about-logo" />
+              <div className="demo-about-grid">
+                <img src="/NC_1.jpg" alt="Gallery 1" />
+                <img src="/NC_2.jpg" alt="Gallery 2" />
+                <img src="/NC_3.jpg" alt="Gallery 3" />
+                <img src="/NC_4.jpg" alt="Gallery 4" />
+                <img src="/NC_5.jpg" alt="Gallery 5" />
+                <img src="/NC_6.jpg" alt="Gallery 6" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Card 2: ANNOUNCEMENTS */}
+        <div className="demo-card">
+          <h2 className="demo-card-title">2. ANNOUNCEMENTS</h2>
+          <div className="demo-card-content">
+            <div className="demo-anno-item">
+              <img src="/HT_ICBF.png" alt="ICBF" className="demo-anno-img" />
+              <div className="demo-anno-text">
+                <span className="demo-anno-date">10 Apr 2026</span>
+                <h4>Registration Open for ICBF 2026</h4>
+                <a href="#">Read More &gt;</a>
+              </div>
+            </div>
+            <div className="demo-anno-item">
+              <img src="/HT_UEH.png" alt="UEH Event" className="demo-anno-img" />
+              <div className="demo-anno-text">
+                <span className="demo-anno-date">21 Apr 2026</span>
+                <h4>UEH Economic Conference 2026</h4>
+                <a href="#">Read More &gt;</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Card 3: GUIDELINES */}
+        <div className="demo-card">
+          <h2 className="demo-card-title">3. GUIDELINES</h2>
+          <div className="demo-card-content demo-guides-grid">
+            <div className="demo-guide-box">
+              <span className="demo-guide-icon">📄</span>
+              <span>Registration Guide</span>
+            </div>
+            <div className="demo-guide-box">
+              <span className="demo-guide-icon">📝</span>
+              <span>Competition Rules</span>
+            </div>
+            <div className="demo-guide-box">
+              <span className="demo-guide-icon">🔗</span>
+              <span>Project Submission Form</span>
+            </div>
+            <div className="demo-guide-box">
+              <span className="demo-guide-icon">📘</span>
+              <span>Mentor Handbook</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
