@@ -101,7 +101,7 @@ function OrganizerDashboard() {
         </div>
 
         {/* ── EVENT LIST ── */}
-        <div className="org-event-list">
+        <div className="org-list">
           {visibleEvents.length === 0 ? (
             <div className="org-empty">
               <span>💭</span>
@@ -112,9 +112,10 @@ function OrganizerDashboard() {
             </div>
           ) : (
             visibleEvents.map((event) => (
-              <div key={event.id} className="org-event-card">
+              <div key={event.id} className="org-card">
                 <div className="org-event-poster">
                   <img
+                    className="org-card-img"
                     src={event.poster || event.image || "/DC_poster.jpg"}
                     alt={event.title}
                     onError={(e) => { e.target.src = "/DC_poster.jpg"; }}
@@ -136,7 +137,7 @@ function OrganizerDashboard() {
                         : `● ${t("org_status_upcoming")}`}
                     </span>
                   </div>
-                  <div className="org-event-actions">
+                  <div className="org-card-actions">
                     <button
                       className="org-action-btn"
                       onClick={() => navigate(`/competition/${event.id}`)}
