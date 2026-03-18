@@ -57,6 +57,15 @@ function Login() {
     if (e.key === "Enter") handleLogin();
   };
 
+  const scrollToSection = (id) => {
+    if (id === 'top') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="auth-page">
       {/* ===== TOP NAVBAR ===== */}
@@ -113,10 +122,10 @@ function Login() {
 
       {/* ===== SECOND NAVBAR ===== */}
       <nav className="second-navbar">
-        <button className="nav-link">{t("home")}</button>
-        <button className="nav-link">{t("aboutUs")}</button>
-        <button className="nav-link">{t("announcements")}</button>
-        <button className="nav-link">{t("guidelines")}</button>
+        <button className="nav-link" onClick={() => scrollToSection('top')}>{t("home")}</button>
+        <button className="nav-link" onClick={() => scrollToSection('about-us')}>{t("aboutUs")}</button>
+        <button className="nav-link" onClick={() => scrollToSection('announcements')}>{t("announcements")}</button>
+        <button className="nav-link" onClick={() => scrollToSection('guidelines')}>{t("guidelines")}</button>
         <button className="search-icon-btn" aria-label="Search">
           <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
             <circle cx="11" cy="11" r="8" />
@@ -225,6 +234,77 @@ function Login() {
             >
               ← {t("backToHome") || "Quay lại trang chủ"}
             </button>
+          </div>
+        </div>
+      </div>
+
+      {/* ===== LANDING SECTIONS ===== */}
+      <div id="about-us" className="landing-section">
+        <h2 className="section-title">{t("aboutUs")}</h2>
+        <div className="about-content">
+          <p>
+            Academic Competition Management System (ACMS) là hệ thống được phát triển nhằm hỗ trợ sinh viên và giảng viên Trường Đại học Kinh tế – Luật trong việc tiếp cận, đăng ký và quản lý các cuộc thi học thuật, nghiên cứu khoa học.
+          </p>
+          <div className="about-grid">
+            <div className="about-card">
+              <h3>Tầm nhìn</h3>
+              <p>Trở thành nền tảng trung tâm kết nối tri thức và khơi nguồn sáng tạo cho cộng đồng UEL.</p>
+            </div>
+            <div className="about-card">
+              <h3>Sứ mệnh</h3>
+              <p>Đơn giản hóa quy trình, tối ưu hóa trải nghiệm tham gia thi đấu học thuật và nghiên cứu.</p>
+            </div>
+            <div className="about-card">
+              <h3>Giá trị</h3>
+              <p>Minh bạch, Công bằng, Sáng tạo và Trách nhiệm cộng đồng.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="announcements" className="landing-section bg-light">
+        <h2 className="section-title">{t("announcements")}</h2>
+        <div className="announcement-cards">
+          <div className="anno-card">
+            <span className="anno-date">10/05/2026</span>
+            <h4>Khai mạc Hackathon 2026</h4>
+            <p>Sự kiện đánh dấu bước khởi đầu cho chuỗi ngày tranh tài gay cấn với nhiều ý tưởng chuyển đổi số.</p>
+          </div>
+          <div className="anno-card">
+            <span className="anno-date">02/05/2026</span>
+            <h4>Công bố thể lệ NCKH cấp trường</h4>
+            <p>Sinh viên vui lòng cập nhật quy định mới nhất cho đợt thi bảo vệ luận án năm nay trên hệ thống.</p>
+          </div>
+          <div className="anno-card">
+            <span className="anno-date">25/04/2026</span>
+            <h4>Mở cổng đăng ký SCHALLENGE XIII</h4>
+            <p>Đăng ký sớm nhất ngay hôm nay để nhận được sự tư vấn, định hướng từ các mentor hàng đầu.</p>
+          </div>
+        </div>
+      </div>
+
+      <div id="guidelines" className="landing-section">
+        <h2 className="section-title">{t("guidelines")}</h2>
+        <div className="guideline-steps">
+          <div className="step-item">
+            <div className="step-number">1</div>
+            <h4>Đăng nhập</h4>
+            <p>Sử dụng tài khoản email sinh viên hoặc giảng viên UEL để truy cập hệ thống.</p>
+          </div>
+          <div className="step-item">
+            <div className="step-number">2</div>
+            <h4>Tìm cuộc thi</h4>
+            <p>Khám phá các cuộc thi học thuật phù hợp với chuyên ngành đang mở đăng ký.</p>
+          </div>
+          <div className="step-item">
+            <div className="step-number">3</div>
+            <h4>Nộp hồ sơ</h4>
+            <p>Làm theo hướng dẫn và nộp bài dự thi trực tiếp thông qua nền tảng ACMS.</p>
+          </div>
+          <div className="step-item">
+            <div className="step-number">4</div>
+            <h4>Theo dõi</h4>
+            <p>Nhận thông báo cập nhật kết quả và phản hồi từ Ban tổ chức nhanh chóng.</p>
           </div>
         </div>
       </div>

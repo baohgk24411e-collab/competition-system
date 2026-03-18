@@ -202,7 +202,7 @@
 /* ===== AUTH CONTENT AREA ===== */
 .auth-content {
   flex: 1;
-  min-height: 0;
+  min-height: calc(100vh - 98px); /* 54px top navbar + 44px second navbar */
   display: flex;
   align-items: stretch;
   background-size: cover;
@@ -751,4 +751,160 @@
 
   .landing-title { font-size: 28px; letter-spacing: 2px; }
   .landing-title-accent { font-size: 34px; }
+}
+
+/* ===== LANDING SECTIONS ===== */
+.landing-section {
+  padding: 60px 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.landing-section.bg-light {
+  background: #fff;
+  max-width: none;
+  padding: 60px 10vw;
+}
+
+.section-title {
+  text-align: center;
+  font-family: 'Outfit', sans-serif;
+  font-size: 32px;
+  color: #15427d;
+  margin-bottom: 40px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+/* ABOUT US SECTION */
+.about-content p {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 40px auto;
+  color: #4b5563;
+  line-height: 1.7;
+  font-size: 15px;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.about-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 30px 24px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(21, 66, 125, 0.05);
+}
+
+.about-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(21, 66, 125, 0.1);
+}
+
+.about-card h3 {
+  color: #e55a1c;
+  margin-bottom: 12px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.about-card p {
+  margin: 0;
+  font-size: 14px;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+/* ANNOUNCEMENTS SECTION */
+.announcement-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.anno-card {
+  background: #f8fafc;
+  border-left: 4px solid #15427d;
+  padding: 24px;
+  border-radius: 8px;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.anno-card:hover {
+  background: #f1f5f9;
+  border-left-color: #e55a1c;
+}
+
+.anno-date {
+  font-size: 12px;
+  color: #64748b;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.anno-card h4 {
+  color: #1e293b;
+  font-size: 18px;
+  margin-bottom: 8px;
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+.anno-card p {
+  color: #475569;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* GUIDELINES SECTION */
+.guideline-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.step-item {
+  text-align: center;
+  position: relative;
+}
+
+.step-number {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #15427d, #2471c4);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0 auto 20px auto;
+  box-shadow: 0 4px 14px rgba(21, 66, 125, 0.3);
+}
+
+.step-item h4 {
+  color: #1e293b;
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.step-item p {
+  color: #475569;
+  font-size: 14px;
+  line-height: 1.6;
 }
