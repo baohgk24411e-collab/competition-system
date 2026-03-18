@@ -24,8 +24,6 @@ import AboutUsLanding       from './pages/AboutUsLanding'
 import AnnouncementsLanding from './pages/AnnouncementsLanding'
 import GuidelinesLanding    from './pages/GuidelinesLanding'
 import './index.css'
-import UnionDashboard      from './pages/UnionOffice/UnionDashboard'
-import './index.css'
 
 function RequireAuth({ children }) {
   const user = localStorage.getItem('uel_auth_user')
