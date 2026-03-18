@@ -1,9 +1,5 @@
 import { useParams, useNavigate } from 'react-router-dom';
 import { COMPETITIONS_DATA } from './data/competitionsData';
-import dcImg  from '/digital_creatory.jpg';
-import erpImg from '/ERPSIM.jpg';
-import S_Challenge from '/S_challenge.jpg';
-import AI4I from '/AI_in_Business.jpg';
 import { useLanguage } from './LanguageContext';
 import { getOrgLogo } from './data/orgLogos';
 import { useNotifications } from './NotificationContext';
@@ -11,12 +7,12 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import './CompetitionDetail.css';
 
-// Map id → imported image
+// Map id → public image path
 const POSTER_IMAGES = {
-  1: dcImg,
-  5: erpImg,
-  7: AI4I,
-  3: S_Challenge,
+  1: '/digital_creatory.jpg',
+  5: '/ERPSIM.jpg',
+  7: '/AI_in_Business.jpg',
+  3: '/S_challenge.jpg',
 };
 
 const CompetitionDetail = () => {
@@ -26,9 +22,10 @@ const CompetitionDetail = () => {
   const { t } = useLanguage();
   const { addNotification } = useNotifications();
   const data = COMPETITIONS_DATA.find(item => item.id === Number(id));
+  
   if (!data) return <div className="cd-error">Không tìm thấy cuộc thi!</div>;
 
-  // Lấy ảnh đã import, fallback về poster string trong data
+  // Lấy đường dẫn ảnh, fallback về poster string trong data
   const posterSrc = POSTER_IMAGES[data.id] || data.poster;
 
   return (
