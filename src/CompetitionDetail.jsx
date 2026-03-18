@@ -16,6 +16,7 @@ const POSTER_IMAGES = {
   1: dcImg,
   5: erpImg,
   7: AI4I,
+  3: S_Challenge,
 };
 
 const CompetitionDetail = () => {
