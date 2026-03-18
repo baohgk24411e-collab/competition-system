@@ -20,6 +20,11 @@ import ProfilePage          from './pages/ProfilePage'
 import OrganizerDashboard  from './pages/Organizer/OrganizerDashboard'
 import CreateEvent         from './pages/Organizer/CreateEvent'
 import UnionDashboard      from './pages/UnionOffice/UnionDashboard'
+import AboutUsLanding       from './pages/AboutUsLanding'
+import AnnouncementsLanding from './pages/AnnouncementsLanding'
+import GuidelinesLanding    from './pages/GuidelinesLanding'
+import './index.css'
+import UnionDashboard      from './pages/UnionOffice/UnionDashboard'
 import './index.css'
 
 function RequireAuth({ children }) {
@@ -35,9 +40,13 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <BrowserRouter>
           <Routes>
             {/* Public Routes */}
-            <Route path="/"         element={<Landing />} />
-            <Route path="/login"    element={<Login />} />
-            <Route path="/register" element={<Register />} />
+            {/* Public Routes */}
+            <Route path="/"               element={<Landing />} />
+            <Route path="/about-us"       element={<AboutUsLanding />} />
+            <Route path="/announcements"  element={<AnnouncementsLanding />} />
+            <Route path="/guidelines"     element={<GuidelinesLanding />} />
+            <Route path="/login"          element={<Login />} />
+            <Route path="/register"       element={<Register />} />
 
             {/* Protected Routes */}
             <Route path="/home"             element={<RequireAuth><HomePage /></RequireAuth>} />
