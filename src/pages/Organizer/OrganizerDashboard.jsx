@@ -86,16 +86,18 @@ function OrganizerDashboard() {
         </div>
 
         {/* ── TABS ── */}
-        <div className="org-tabs-bar">
-          {TABS.map(({ key, label }) => (
-            <button
-              key={key}
-              className={`org-tab-btn ${activeTab === key ? "active" : ""}`}
-              onClick={() => setActiveTab(key)}
-            >
-              {label}
-            </button>
-          ))}
+        <div className="org-tabs-container">
+          <div className="org-tabs">
+            {TABS.map(({ key, label }) => (
+              <button
+                key={key}
+                className={`org-tab ${activeTab === key ? "active" : ""}`}
+                onClick={() => setActiveTab(key)}
+              >
+                {label}
+              </button>
+            ))}
+          </div>
         </div>
 
         {/* ── EVENT LIST ── */}

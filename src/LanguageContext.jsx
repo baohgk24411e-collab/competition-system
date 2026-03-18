@@ -118,7 +118,7 @@ const TRANSLATIONS = {
     profile:            'My Profile',
 
     /* ── ORGANIZER DASHBOARD ── */
-    org_tab_published:          'Approval Published',
+    org_tab_published:          'Approval / Published',
     org_tab_draft:              'Draft',
     org_tab_past:               'Past',
     org_view_profile:           'View Profile',
@@ -274,6 +274,26 @@ const TRANSLATIONS = {
     loginError:         'Sai tên đăng nhập hoặc mật khẩu.',
     cookies:            'Cài đặt Cookie',
     profile:            'Hồ sơ cá nhân',
+
+    /* ── ORGANIZER DASHBOARD ── */
+    org_tab_published:          'Đã duyệt / Đã đăng',
+    org_tab_draft:              'Bản nháp',
+    org_tab_past:               'Đã qua',
+    org_view_profile:           'Xem hồ sơ',
+    org_article_mgmt:           'Quản lý bài viết',
+    org_create_event:           'Tạo sự kiện mới',
+    org_no_events:              'Chưa có sự kiện nào trong mục này.',
+    org_status_ongoing:         'Đang diễn ra',
+    org_status_ended:           'Đã kết thúc',
+    org_status_upcoming:        'Sắp diễn ra',
+    org_btn_view_detail:        'Xem chi tiết',
+    org_btn_attendance:         'Điểm danh',
+    org_btn_announcement:       'Thông báo',
+    org_announcement:           'Thông báo',
+    org_announcement_placeholder:'Viết thông báo của bạn tại đây...',
+    org_announcement_sent:      'Đã gửi thông báo!',
+    org_btn_send:               'Gửi',
+    org_btn_cancel:             'Hủy',
   },
 }
 
