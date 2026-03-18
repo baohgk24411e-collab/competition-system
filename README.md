@@ -1,16 +1,99 @@
-# React + Vite
+# Academic Competition Management System (ACMS)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to the **Academic Competition Management System (ACMS)** – a robust platform designed to centralize and streamline all academic competitions and events for the University of Economics and Law (UEL).
 
-Currently, two official plugins are available:
+## 🌟 Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+ACMS serves as a comprehensive hub connecting students, mentors, organizing units, and the Union Office. It simplifies the discovery, registration, organization, and approval processes for academic competitions and scientific research conferences.
 
-## React Compiler
+## 🏗️ System Architecture
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+The application is built using a modern frontend architecture focused on performance, modularity, and user experience.
 
-## Expanding the ESLint configuration
+### Tech Stack
+- **Frontend Framework:** React 18
+- **Build Tool:** Vite
+- **Routing:** React Router v6
+- **State Management:** React Context API (Custom Providers)
+- **Styling:** Pure CSS with CSS Grid/Flexbox and responsive media queries
+- **Internationalization:** Custom `LanguageContext` (English & Vietnamese)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Directory Structure & Modules
+
+```text
+src/
+├── components/          # Reusable UI components (Header, Footer)
+├── contexts/            # Global state management
+│   ├── LanguageContext.jsx     # i18n logic (EN/VI)
+│   └── NotificationContext.jsx # Toast notification system
+├── data/                # Mock data / Static assets (temporary DB)
+│   ├── competitionsData.js
+│   ├── eventData.js
+│   └── usersdata.js
+├── pages/               # Route-level components grouped by context
+│   ├── UnionOffice/     # Union specific views (Dashboard, Reports)
+│   ├── Organizer/       # Organizer specific views (Create Event, Dashboard)
+│   ├── AboutUsLanding, AnnouncementsLanding, GuidelinesLanding # Info pages
+│   ├── HomePage.jsx     # Main authenticated user dashboard
+│   ├── ForumPage.jsx    # Discussion forum view
+│   ├── ProfilePage.jsx  # User profile management
+│   └── ...
+├── Landing.jsx          # Public entry page
+├── Login.jsx            # Authentication interface
+└── main.jsx             # Application entry point and Router configuration
+```
+
+## 👥 Role-Based Access Control (RBAC)
+
+The system defines four primary user roles, each with tailored interfaces and permissions:
+
+1. **Sinh viên (Student):**
+   - Can view and search for upcoming competitions and conferences.
+   - Register for events.
+   - Access the community forum and learning resources.
+2. **Giảng viên (Mentor):**
+   - Guide student projects.
+   - Access specific mentor resources and dashboards.
+3. **Đơn vị tổ chức (Organizer):**
+   - Custom Organizer Dashboard.
+   - Create, draft, and submit new events (competitions/conferences).
+   - Track participant registrations.
+4. **Văn phòng Đoàn (Union Office):**
+   - Highest level of event moderation.
+   - Approve or reject event proposals submitted by organizers.
+   - View overarching statistical reports (charts) on event metrics.
+
+## 🚀 Key Features
+
+- **Dynamic Theming & Localization:** Instant toggle between Vietnamese and English across all system components.
+- **Protected Routing:** `RequireAuth` wrapper ensures secure access to specialized dashboards based on active login state.
+- **Event Lifecycle Management:** From draft creation by an Organizer to final approval by the Union Office.
+- **Responsive Layout:** Engineered to work seamlessly across Desktop, Tablet, and Mobile views.
+- **Interactive UI:** Smooth transitions, blurred hero backgrounds, hover states, and dynamic status badges.
+
+## 🛠️ Getting Started
+
+### Prerequisites
+- Node.js (v16 or higher)
+- npm or yarn
+
+### Installation
+1. Clone the repository.
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
+4. Build for production:
+   ```bash
+   npm run build
+   ```
+
+## 📝 Future Technical Roadmap
+- Integration with a strict backend API (Node.js/Express or Spring Boot).
+- Implementation of JWT for robust authentication.
+- Persisting state with Redux Toolkit or React Query.
+- Real-time notifications using WebSockets.
