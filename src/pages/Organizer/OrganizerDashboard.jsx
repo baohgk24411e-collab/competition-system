@@ -56,7 +56,7 @@ function OrganizerDashboard() {
         <div className="org-hero-card">
           <div
             className="org-cover"
-            style={{ backgroundImage: `url(${profile.coverImage || "/3.jpg"})` }}
+            style={{ backgroundImage: `url(${profile.coverImage || "/UEL_Building.jpg"})` }}
           />
           <div className="org-profile-row">
             <div className="org-identity">

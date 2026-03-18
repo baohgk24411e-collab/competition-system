@@ -101,36 +101,41 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
-  margin-top: 20px;
+  margin-top: -50px; /* Đẩy bộ nút lên đè ảnh bìa giống avatar */
   min-width: 200px;
+  position: relative;
+  z-index: 10;
 }
 
 .org-btn-outline {
-  padding: 12px 20px;
-  border: 1px solid #e2e8f0;
-  background: #f8fafc;
-  border-radius: 12px;
+  padding: 10px 20px;
+  border: none;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(4px);
+  border-radius: 20px;
   font-weight: 700;
   color: #334155;
   cursor: pointer;
   transition: all 0.2s;
   text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 .org-btn-outline:hover {
-  background: #f1f5f9;
+  background: #fff;
+  transform: translateY(-1px);
 }
 
 .org-btn-solid {
-  padding: 12px 20px;
-  background: #f97316; /* Màu cam đậm */
+  padding: 10px 20px;
+  background: #ea580c; /* Màu cam đậm */
   color: #fff;
   border: none;
-  border-radius: 12px;
+  border-radius: 20px;
   font-weight: 700;
   cursor: pointer;
   text-align: center;
   transition: all 0.2s;
-  box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
+  box-shadow: 0 4px 12px rgba(234, 88, 12, 0.3);
 }
 .org-btn-solid:hover {
   background: #ea580c;
